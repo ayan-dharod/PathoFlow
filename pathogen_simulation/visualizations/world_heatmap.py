@@ -2,6 +2,7 @@ import streamlit as st
 import plotly.express as px
 import pandas as pd
 import numpy as np
+import os
 
 def load_country_coordinates():
     """Load country coordinates mapping"""
@@ -334,7 +335,9 @@ def display_global_map():
     st.header("Global Disease Spread Visualization")
     
     # Load and prepare data
-    countries_data = pd.read_csv('data/country_data.csv')
+    current_dir = os.path.dirname(__file__)
+    data_path = os.path.join(current_dir, 'data', 'country_data.csv')
+    countries_data = pd.read_csv(data_path)
     variants = st.session_state.variants if 'variants' in st.session_state else []
     vaccination_params = st.session_state.vaccination_params if 'vaccination_params' in st.session_state else {}
     

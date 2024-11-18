@@ -16,7 +16,7 @@ def initialize_healthcare_params():
 
 def load_country_data():
     """Load and process country data from CSV"""
-    df = pd.read_csv('data/country_data.csv')
+    df = pd.read_csv('pathogen_simulation/data/country_data.csv')
     
     # Calculate world totals and averages
     world_data = {
