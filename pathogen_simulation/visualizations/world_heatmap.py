@@ -335,9 +335,7 @@ def display_global_map():
     st.header("Global Disease Spread Visualization")
     
     # Load and prepare data
-    current_dir = os.path.dirname(__file__)
-    data_path = os.path.join(current_dir, 'data', 'country_data.csv')
-    countries_data = pd.read_csv(data_path)
+    countries_data = pd.read_csv('pathogen_simulation/data/country_data.csv')
     variants = st.session_state.variants if 'variants' in st.session_state else []
     vaccination_params = st.session_state.vaccination_params if 'vaccination_params' in st.session_state else {}
     
